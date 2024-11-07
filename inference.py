@@ -29,11 +29,15 @@ def main(args):
     current_root_path = os.path.split(current_code_path)[0]
 
     os.environ['TORCH_HOME']=os.path.join(current_root_path, args.checkpoint_dir)
-
+    print("this path",current_root_path)
     path_of_lm_croper = os.path.join(current_root_path, args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
+    print("this path1",current_root_path)
     path_of_net_recon_model = os.path.join(current_root_path, args.checkpoint_dir, 'epoch_20.pth')
+    print("this path2",current_root_path)
     dir_of_BFM_fitting = os.path.join(current_root_path, args.checkpoint_dir, 'BFM_Fitting')
+    print("this path3",current_root_path)
     wav2lip_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'wav2lip.pth')
+    print("this path4",current_root_path)
 
     audio2pose_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'auido2pose_00140-model.pth')
     audio2pose_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2pose.yaml')
