@@ -30,24 +30,24 @@ def main(args):
 
     os.environ['TORCH_HOME']=os.path.join(current_root_path, args.checkpoint_dir)
 
-    path_of_lm_croper = os.path.join(args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
-    path_of_net_recon_model = os.path.join(args.checkpoint_dir, 'epoch_20.pth')
-    dir_of_BFM_fitting = os.path.join(args.checkpoint_dir, 'BFM_Fitting')
-    wav2lip_checkpoint = os.path.join(args.checkpoint_dir, 'wav2lip.pth')
+    path_of_lm_croper = os.path.join(current_root_path, args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
+    path_of_net_recon_model = os.path.join(current_root_path, args.checkpoint_dir, 'epoch_20.pth')
+    dir_of_BFM_fitting = os.path.join(current_root_path, args.checkpoint_dir, 'BFM_Fitting')
+    wav2lip_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'wav2lip.pth')
 
-    audio2pose_checkpoint = os.path.join(args.checkpoint_dir, 'auido2pose_00140-model.pth')
+    audio2pose_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'auido2pose_00140-model.pth')
     audio2pose_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2pose.yaml')
     
-    audio2exp_checkpoint = os.path.join(args.checkpoint_dir, 'auido2exp_00300-model.pth')
+    audio2exp_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'auido2exp_00300-model.pth')
     audio2exp_yaml_path = os.path.join(current_root_path, 'src', 'config', 'auido2exp.yaml')
 
-    free_view_checkpoint = os.path.join(args.checkpoint_dir, 'facevid2vid_00189-model.pth.tar')
+    free_view_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'facevid2vid_00189-model.pth.tar')
 
     if args.preprocess == 'full':
-        mapping_checkpoint = os.path.join(args.checkpoint_dir, 'mapping_00109-model.pth.tar')
+        mapping_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'mapping_00109-model.pth.tar')
         facerender_yaml_path = os.path.join(current_root_path, 'src', 'config', 'facerender_still.yaml')
     else:
-        mapping_checkpoint = os.path.join(args.checkpoint_dir, 'mapping_00229-model.pth.tar')
+        mapping_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'mapping_00229-model.pth.tar')
         facerender_yaml_path = os.path.join(current_root_path, 'src', 'config', 'facerender.yaml')
 
     #init model
