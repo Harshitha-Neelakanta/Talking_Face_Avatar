@@ -30,7 +30,7 @@ def main(args):
 
     os.environ['TORCH_HOME']=os.path.join(current_root_path, args.checkpoint_dir)
 
-    path_of_lm_croper = os.path.join(current_root_path, args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
+    path_of_lm_croper = os.path.join(args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
     path_of_net_recon_model = os.path.join(current_root_path, args.checkpoint_dir, 'epoch_20.pth')
     dir_of_BFM_fitting = os.path.join(current_root_path, args.checkpoint_dir, 'BFM_Fitting')
     wav2lip_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'wav2lip.pth')
