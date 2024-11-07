@@ -30,7 +30,7 @@ def main(args):
 
     os.environ['TORCH_HOME']=os.path.join(current_root_path, args.checkpoint_dir)
 
-    path_of_lm_croper = os.path.join(args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
+    path_of_lm_croper = os.path.join(current_root_path, args.checkpoint_dir, 'shape_predictor_68_face_landmarks.dat')
     path_of_net_recon_model = os.path.join(current_root_path, args.checkpoint_dir, 'epoch_20.pth')
     dir_of_BFM_fitting = os.path.join(current_root_path, args.checkpoint_dir, 'BFM_Fitting')
     wav2lip_checkpoint = os.path.join(current_root_path, args.checkpoint_dir, 'wav2lip.pth')
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     parser.add_argument("--source_image", default='./examples/source_image/full_body_2.png', help="path to source image")
     parser.add_argument("--ref_eyeblink", default=None, help="path to reference video providing eye blinking")
     parser.add_argument("--ref_pose", default=None, help="path to reference video providing pose")
-    parser.add_argument("--checkpoint_dir", default='./checkpoints', help="path to output")
+    parser.add_argument("--checkpoint_dir", default='./Talking_Face_Avatar/checkpoints', help="path to output")
     parser.add_argument("--result_dir", default='./results', help="path to output")
     parser.add_argument("--pose_style", type=int, default=0,  help="input pose style from [0, 46)")
     parser.add_argument("--batch_size", type=int, default=2,  help="the batch size of facerender")
